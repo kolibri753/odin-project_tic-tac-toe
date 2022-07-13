@@ -1,0 +1,163 @@
+.main {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 1em;
+  padding: 1em;
+  background-color: $dark-grey;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(120, 120, 120, 0.7);
+  display: grid;
+  place-items: center;
+  transition: var(--transition);
+  visibility: hidden;
+  z-index: -10;
+
+  .modal {
+    overflow: hidden;
+    min-width: 300px;
+    width: 20%;
+    height: 200px; //55%
+    background-color: $highlight;
+    border-radius: 5% 0 5% 5%;
+    box-shadow: 1rem 1rem 1rem 1rem rgba(96, 121, 138, 0.6);
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5em;
+      background-color: $black;
+      color: $white;
+    }
+
+    &__close-btn {
+      background-color: $white;
+      border: none;
+      cursor: pointer;
+    }
+
+    &__body {
+      padding: 1em;
+    }
+    
+    &__text {
+      font-size: 2em;
+      text-align: center;
+    }
+  }
+}
+
+.open-modal {
+  visibility: visible;
+  z-index: 10;
+}
+
+.top {
+  display: flex;
+  gap: 1em;
+  width: 33.875em;
+  justify-content: space-between;
+}
+
+.turn {
+  background: $light-grey;
+  border-radius: 1em;
+  border: 1px solid $black;
+  padding: 0.5em 4em;
+  font-size: 1.5em;
+  align-items: center;
+
+  &__player {
+    text-transform: uppercase;
+    font-weight: 900;
+    color: $red;
+  }
+}
+
+.refresh-btn {
+  width: 4.125em;
+  border-radius: 1em;
+  height: 100%;
+  border: 1px solid $black;
+  background-color: $light-grey;
+  cursor: pointer;
+
+  i {
+    transition: all 1s;
+  }
+
+  &:hover {
+    i {
+      transform: scale(1.5) rotateZ(360deg);
+    }
+  }
+}
+
+.score {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(3, 10.625em);
+
+  .info-block {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1em;
+    border: 1px solid $black;
+    padding: 1em;
+
+    align-items: center;
+
+    &__text {
+      font-size: 1.2em;
+    }
+
+    &__score {
+      font-size: 1.5em;
+      font-weight: 900;
+    }
+
+    &--user1 {
+      background-color: $blue;
+    }
+
+    &--tie {
+      background-color: $light-grey;
+    }
+
+    &--user2 {
+      background-color: $yellow;
+    }
+  }
+}
+
+.board {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(3, 10.625em);
+  grid-template-rows: repeat(3, 10.625em);
+
+  &__cell {
+    text-align: center;
+    justify-content: center;
+    font-size: 10em;
+    line-height: 0.9em;
+    border-radius: 1rem;
+    border: 1px solid $black;
+    background-color: $white;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $highlight;
+    }
+  }
+}

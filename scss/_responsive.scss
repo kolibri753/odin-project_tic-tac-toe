@@ -1,0 +1,22 @@
+@media screen and (max-width: 600px) {
+    .main {
+      font-size: 14px;
+    }
+  }
+  
+  @media screen and (max-width: 500px) {
+    .main {
+      font-size: 11px;
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    .main {
+      font-size: 8px;
+  
+      .board {
+        box-sizing: content-box;
+      }
+    }
+  }
+  

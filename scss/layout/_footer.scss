@@ -1,0 +1,23 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  justify-content: center;
+  min-height: 3em;
+  padding: 1em;
+  background-color: $black;
+
+  &__links {
+    a + a {
+      margin-left: 2rem;
+    }
+
+    a {
+      color: $white;
+
+      &:hover {
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5);
+      }
+    }
+  }
+}
