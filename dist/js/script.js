@@ -31,6 +31,9 @@ function closeModalWindow() {
 
 function startGame() {
   playerTwoTurn = false;
+  const hTurn = document.querySelector(".turn__player");
+  const nextPlayer = playerTwoTurn ? playerOne : playerTwo;
+  hTurn.textContent = nextPlayer;
   cells.forEach((cell) => {
     cell.addEventListener("click", playerClick, { once: true })
   });
